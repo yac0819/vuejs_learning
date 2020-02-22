@@ -1,0 +1,37 @@
+<script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+<div id="app">
+    <h1>Home FOODs DDAY</h1>
+    <div>
+        <input v-model="foodName"> <button v-on:click='addFood()'>ADD</button>
+    </div>
+    <br>
+    <div>
+        <table>
+            <tr>
+                <th>name</th>
+                <th>dueDate</th>
+            </tr>
+            <tr>
+                <th>{{foods}}</th>
+                <th>{{dueDate}}</th>
+            </tr>
+        </table>
+        <p>{{foods}}</p>
+    </div>
+</div>
+<script src="app.js"></script>
+
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 15px;
+    }
+</style>
