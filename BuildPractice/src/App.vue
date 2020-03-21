@@ -13,10 +13,10 @@
 </template>
 
 <script>
-import Header from './Header'
-import Footer from './Footer'
-import Servers from './Servers'
-import Details from './ServerDetails'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Servers from './components/Servers'
+import Details from './components/ServerDetails'
 export default {
     components: {
         'app-header': Header,
