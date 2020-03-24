@@ -3,7 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 
-Vue.filter('to-lowercase');
+Vue.filter('to-lowercase', function(value) {
+  return value.toLowerCase();
+});
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
