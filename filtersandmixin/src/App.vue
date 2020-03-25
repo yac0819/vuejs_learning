@@ -5,6 +5,7 @@
                 <h1>Filters & Mixins</h1>
                 <p>{{ text | toUppecase | to-lowercase}}</p>
                 <hr>
+                <button @click="fruits.push('Berries')">Add new Item</button>
                 <input v-model="filterText">
                 <ul>
                   <li v-for="fruit in filetredFruits">{{ fruit }}</li>
@@ -18,13 +19,15 @@
 </template>
 
 <script>
-    import List from './List'
+    import List from './List';
+    import { fruitMixin } from './fruitMixin'
     export default {
+      mixins: [fruitMixin],
       data() {
         return {
           text: 'Hello there!',
-          fruits: ['Apple', 'Banana', 'Mango', 'Melon'],
-          filterText: ''
+          // fruits: ['Apple', 'Banana', 'Mango', 'Melon'],
+          // filterText: ''
         }
       },
       filters: {
@@ -32,13 +35,13 @@
           return value.toUpperCase();
         }
       },
-      computed: {
-        filetredFruits() {
-          return this.fruits.filter((element) => {
-            return element.match(this.filterText);
-          });
-        }
-      },
+      // computed: {
+      //   filetredFruits() {
+      //     return this.fruits.filter((element) => {
+      //       return element.match(this.filterText);
+      //     });
+      //   }
+      // },
       components: {
         appList: List,
       }
