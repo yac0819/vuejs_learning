@@ -9,6 +9,8 @@
                 <ul>
                   <li v-for="fruit in filetredFruits">{{ fruit }}</li>
                 </ul>
+                <hr>
+                <app-list></app-list>
             </div>
             
         </div>
@@ -16,6 +18,7 @@
 </template>
 
 <script>
+    import List from './List'
     export default {
       data() {
         return {
@@ -35,6 +38,9 @@
             return element.match(this.filterText);
           });
         }
+      },
+      components: {
+        appList: List,
       }
     }
 </script>
